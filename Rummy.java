@@ -1,16 +1,9 @@
 /*****************************************************************************
  *  Author: Rahul Jagetia
  *  Date: 10/06/2019
- *  Project Description: Two-player game of gin rummy
- *     Rules for Rummy:
- *     -Need three pairs of 3 and one pair of four straight numbers with the
- *     same suit (i.e. 3, 4, and 5 of spades is a
- *     - pair of three)
- *     -Every turn, have two options: Pick up bottom card or pick card from deck
- *     -After picking up card, remove a card
- *     -Repeat until someone can "show" aka they have all the sequences necessary
- *     -Cards for each person is stored in a separate text file, and the picked up
- *     card is also stored in a separate text file, so no cheating!
+ *  Project Description: Two-player game of gin rummy. Creates initial hands
+ *  which are stored in separate text files and plays until a player can show 
+ *  or there are no cards left.
  *
  * NOTE: Since each game of rummy is treated individually, there are no points
  * in this game.
