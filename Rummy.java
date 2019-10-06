@@ -2,7 +2,8 @@
  *  Author: Rahul Jagetia
  *  Date: 10/06/2019
  *  Project Description: Two-player game of gin rummy. Deals out 13 cards to
- *  each player, and 
+ *  each player, and plays turns until a player shows or there are no cards left
+ *  to be drawn
  *
  * NOTE: Since each game of rummy is treated individually, there are no points
  * in this game.
