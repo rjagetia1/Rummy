@@ -1,9 +1,16 @@
 /*****************************************************************************
  *  Author: Rahul Jagetia
  *  Date: 10/06/2019
- *  Project Description: Two-player game of gin rummy. Deals out 13 cards to
- *  each player, and plays turns until a player shows or there are no cards left
- *  to be drawn
+ *  Project Description: Two-player game of gin rummy
+ *     Rules for Rummy:
+ *     -Need three pairs of 3 and one pair of four straight numbers with the
+ *     same suit (i.e. 3, 4, and 5 of spades is a
+ *     - pair of three)
+ *     -Every turn, have two options: Pick up bottom card or pick card from deck
+ *     -After picking up card, remove a card
+ *     -Repeat until someone can "show" aka they have all the sequences necessary
+ *     -Cards for each person is stored in a separate text file, and the picked up
+ *     card is also stored in a separate text file, so no cheating!
  *
  * NOTE: Since each game of rummy is treated individually, there are no points
  * in this game.
@@ -85,6 +92,11 @@ public class Rummy {
                 else if (answer.equals("y")) {
                     System.out.println("What card NUMBER would you like to replace it with? ");
                     replaceCard = keyboard.nextInt();
+                    while (replaceCard < 0 || replaceCard > 12) {
+                        System.out.println("Invalid input");
+                        System.out.println("What card NUMBER would you like to replace it with? ");
+                        replaceCard = keyboard.nextInt();
+                    }
 
                     if (currentHandPlaying == 1) {
                         currentCardDown = hand1[replaceCard];
@@ -115,6 +127,12 @@ public class Rummy {
                 currentCard = currentCardDown;
                 System.out.println("What card NUMBER would you like to replace it with? ");
                 replaceCard = keyboard.nextInt();
+                while (replaceCard < 0 || replaceCard > 12) {
+                    System.out.println("Invalid input");
+                    System.out.println("What card NUMBER would you like to replace it with? ");
+                    replaceCard = keyboard.nextInt();
+                }
+
 
                 if (currentHandPlaying == 1) {
                     currentCardDown = hand1[replaceCard];
@@ -147,17 +165,12 @@ public class Rummy {
             if (answer.equals("y")) {
                 System.out.println("Current cards: ");
                 if (currentHandPlaying == 2) {
-                    for (int i = 0; i < 13; i++) {
+                    for (int i = 0; i < 13; i++)
                         System.out.println(hand2[i]);
-                    }
-                    break;
                 }
-                else {
-                    for (int i = 0; i < 13; i++) {
+                else
+                    for (int i = 0; i < 13; i++)
                         System.out.println(hand1[i]);
-                    }
-                    break;
-                }
             }
             else {
                 System.out.println();
@@ -167,3 +180,4 @@ public class Rummy {
     }
 
 }
+
